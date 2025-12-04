@@ -22,7 +22,7 @@ Service:
       EnablePrivateVpcConnection: false
       EnableReversePrivateVpcConnection: false
     ServiceInstanceNameRule:
-      Prefix: Golang-
+      Prefix: QoderCLI-
       UseDefaultValue: false
   OperationMetadata:
     SupportBackup: false
