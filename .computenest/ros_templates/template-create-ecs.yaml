@@ -293,20 +293,26 @@ Resources:
               - InstanceIds
           RegionId:
             Ref: ALIYUN::Region
-Outputs:
-  postgres_address:
-    Description:
-      en: Address
-      zh-cn: 访问页面
-    Value:
-      Fn::Sub:
-        - http://${ServerAddress}:80
-        - ServerAddress:
-            Fn::Select:
-              - 0
-              - Fn::GetAtt:
-                  - InstanceGroup
-                  - PublicIps
+  ExecutionNodejs:
+    Type: 'ALIYUN::OOS::Execution'
+    Properties:
+      ResourceOptions:
+        CancelOnDelete: true
+      TemplateName: "ACS-ECS-BulkyConfigureOOSPackageWithTemporaryURL"
+      SafetyCheck: Skip
+      Parameters:
+        regionId:
+            Ref: ALIYUN::Region
+        action: "install"
+        packageName: "ACS-Extension-node-1853370294850618"
+        targets:
+          Type: ResourceIds
+          ResourceIds:
+            Fn::GetAtt:
+              - InstanceGroup
+              - InstanceIds
+          RegionId:
+            Ref: ALIYUN::Region
 Metadata:
   ALIYUN::ROS::Interface:
     ParameterGroups:

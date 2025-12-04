@@ -16,7 +16,7 @@ Parameters:
       OSType: linux
       NetworkType: vpc
       DisabledStatus: true
-      PackageName: ACS-Extension-golang-1853370294850618
+      PackageName: ACS-Extension-QoderCLI-1853370294850618
 Resources:
   Execution:
     Type: 'ALIYUN::OOS::Execution'
@@ -30,6 +30,24 @@ Resources:
             Ref: ALIYUN::Region
         action: "install"
         packageName: "ACS-Extension-QoderCLI-1853370294850618"
+        targets:
+          Type: ResourceIds
+          ResourceIds:
+            - Ref: InstanceId
+          RegionId:
+            Ref: ALIYUN::Region
+  ExecutionNodejs:
+    Type: 'ALIYUN::OOS::Execution'
+    Properties:
+      ResourceOptions:
+        CancelOnDelete: true
+      TemplateName: "ACS-ECS-BulkyConfigureOOSPackageWithTemporaryURL"
+      SafetyCheck: Skip
+      Parameters:
+        regionId:
+            Ref: ALIYUN::Region
+        action: "install"
+        packageName: "ACS-Extension-node-1853370294850618"
         targets:
           Type: ResourceIds
           ResourceIds:
