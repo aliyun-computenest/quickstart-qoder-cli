@@ -1,0 +1,50 @@
+Service:
+  DeployType: ros
+  DeployMetadata:
+    SupplierDeployMetadata:
+      SupplierTemplateConfigs:
+        - Name: 选择ECS实例（Linux）
+          Url: ros_templates/template-select-ecs.yaml
+          PredefinedParameters: []
+        - Name: 新建ECS实例
+          Url: ros_templates/template-create-ecs.yaml
+          PredefinedParameters: []
+    TemplateConfigs:
+      - Name: 选择ECS实例（Linux）
+        Url: ros_templates/template-select-ecs.yaml
+        PredefinedParameters: []
+        DeployScene: ECS
+      - Name: 新建ECS实例
+        Url: ros_templates/template-create-ecs.yaml
+        PredefinedParameters: []
+        DeployScene: ECS
+    NetworkMetadata:
+      EnablePrivateVpcConnection: false
+      EnableReversePrivateVpcConnection: false
+    ServiceInstanceNameRule:
+      Prefix: Golang-
+      UseDefaultValue: false
+  OperationMetadata:
+    SupportBackup: false
+    PrometheusConfigMap:
+      选择ECS实例（Linux）:
+        EnablePrometheus: false
+      新建ECS实例:
+        EnablePrometheus: false
+  ServiceType: private
+  ServiceInfo:
+    - Agreements: []
+      Image: resources/icons/service_logo.png
+      Locale: zh-CN
+      Name: Golang运行环境
+      ShortDescription: Qoder CLI 内置了 Grep、Read、Write 和 Bash 等工具，可用于文件/目录操作与执行 shell 命令。
+      Softwares: []
+    - Agreements: []
+      Image: resources/icons/service_logo.png
+      Locale: en-US
+      Name: Golang Runtime Environment
+      ShortDescription: Qoder CLI includes built-in tools such as Grep, Read, Write, and Bash, which can be used for file...
+      Softwares: []
+  ShareType: Public
+  ApprovalType: Manual
+Artifact: {}
