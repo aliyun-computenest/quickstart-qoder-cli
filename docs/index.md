@@ -16,26 +16,36 @@ QoderCLI 是一个开源的代码智能分析与生成工具，专为开发者�
 
 4. 部署完成后，通过控制台远程连接ECS。 
 
-5. 通过 TUI 登录 Qoder，在终端中启动 Qoder CLI
+## 使用示例
+
+1. 通过 TUI 登录 Qoder，在终端中启动 Qoder CLI
    ```bash
    qodercli
    ```
    
-6. 在交互式提示符中，输入 /login
+2. 在交互式提示符中，输入 /login
 
    ```bash
    /login
    ```
    
-7. 选择需要的登录方式：
+3. 选择需要的登录方式：
 
    login with browser: 这会在你的默认浏览器中打开登录页面以完成身份验证。
 
-   login with qoder personal access token: 系统会提示你将 Qoder Personal Access Token 直接粘贴到终端。
+4. 登录成功后，开始对话，输入问题，QoderCLI 将自动生成代码、生成单元测试、解释复杂逻辑，并支持多语言智能问答。
+   
+   ![image.png](img_2.png)
+   
+5. 本文以 使用Qoder CLI 生成通过浏览器调用 Qoder CLI 的代码为例，如下图所示，CLI会自动创建相关文件并运行服务。
 
-在你做出选择后，应用会引导你完成最后的步骤。
-你可以在[此页面获取 Personal Access Token](https://qoder.com/account/integrations)
+   ![image.png](img.png)
+
+6. 启动后通过浏览器访问服务。
+
+   ![image.png](img_3.png)
+
 
 ## 📚 使用指南
 
-使用请参考 QoderCLI [官方文档](https://docs.qoder.com/zh/cli/using-cli) 了解完整命令列表。
+使用请参考 Qoder CLI [官方文档](https://docs.qoder.com/zh/cli/using-cli) 了解完整命令列表。
